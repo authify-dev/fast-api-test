@@ -1,10 +1,12 @@
 from fastapi import FastAPI
 
-from core.settings import settings
+from dotenv import load_dotenv
 
 app = FastAPI()
 
 
 @app.get("/")
 def read_root():
-    return {"Hello": f"World from ENVIRONMENT={settings.ENVIRONMENT}"}
+    load_dotenv(".env")
+    ENVIRONMENT = os.environ.get("ENVIRONMENT")
+    return {"Hello": f"World from ENVIRONMENT={ENVIRONMENT}"}
