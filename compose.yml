@@ -1,0 +1,10 @@
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+    environment:
+      - ENVIRONMENT=docker
+    env_file:
+      - ./envs/.env.docker
+    ports:
+      - 9001:9000
