@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from typing import List
 from core.settings import settings
 
-app = FastAPI()
+app = FastAPI(root_path=settings.ROOT_PATH)
 
 # In-memory data store
 products = []
